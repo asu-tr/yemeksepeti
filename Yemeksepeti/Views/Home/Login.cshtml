@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Oturum Aç";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="block-content-inner">
+    <form class="form-horizontal" role="form">
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">E-posta</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="ornek@xyz.com">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Şifre</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Şifreniz">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Beni Hatırla
+                    </label>
+                    <label>
+                        <a href="/Home/CreateAccount">Hesabın yok mu?</a>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Oturum Aç</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
