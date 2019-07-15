@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
-
+@using Yemeksepeti.Models;
 
 <div class="col-md-4"></div>
 <div class="col-md-4">
@@ -71,14 +71,12 @@
                     <div class="form-group">
                         <label for="input-demo-v">İl</label>
                         <select id="input-demo-v" class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            @foreach (Locations location in ViewBag.Locations)
+                            {
+                                <option>@location.City</option>
+                            }
                         </select>
                     </div>
-
 
                     <div class="form-group">
                         <label for="input-demo-v">İlçe</label>
