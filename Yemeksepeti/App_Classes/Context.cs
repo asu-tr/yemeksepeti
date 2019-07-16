@@ -10,7 +10,7 @@ namespace Yemeksepeti.App_Classes
     {
         private static Model_YS baglanti;
 
-        public Model_YS Baglanti
+        public static Model_YS Baglanti
         {
             get
             {

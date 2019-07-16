@@ -1,19 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Ana Sayfa";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
-
-
-
-
-
-
-
-
-
+<h2>Ana Sayfa</h2>
 
 
 
@@ -50,6 +41,24 @@
         </li>
 
         <li class="menu-item-top">
+            <a href="/Admin/Urunler" class="top">
+                <span class="main-menu-icon">
+                    <span aria-hidden="true" class="icon icon-dollar"></span>
+                </span>
+                <span class="main-menu-text">Ürünler</span>
+            </a>
+        </li>
+
+        <li class="menu-item-top">
+            <a href="/Admin/Menuler" class="top">
+                <span class="main-menu-icon">
+                    <span aria-hidden="true" class="icon icon-dollar"></span>
+                </span>
+                <span class="main-menu-text">Menüler</span>
+            </a>
+        </li>
+        
+        <li class="menu-item-top">
             <a href="/Admin/Siparisler" class="top">
                 <span class="main-menu-icon">
                     <span aria-hidden="true" class="icon icon-layers"></span>
@@ -64,6 +73,24 @@
                     <span aria-hidden="true" class="icon icon-star"></span>
                 </span>
                 <span class="main-menu-text">Üyeler</span>
+            </a>
+        </li>
+
+        <li class="menu-item-top">
+            <a href="/Admin/Yorumlar" class="top">
+                <span class="main-menu-icon">
+                    <span aria-hidden="true" class="icon icon-star"></span>
+                </span>
+                <span class="main-menu-text">Yorumlar</span>
+            </a>
+        </li>
+
+        <li class="menu-item-top">
+            <a href="/Admin/Konumlar" class="top">
+                <span class="main-menu-icon">
+                    <span aria-hidden="true" class="icon icon-star"></span>
+                </span>
+                <span class="main-menu-text">Konumlar</span>
             </a>
         </li>
     </ul>

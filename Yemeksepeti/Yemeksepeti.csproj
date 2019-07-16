@@ -1088,6 +1088,11 @@
     <Content Include="Views\Admin\Firmalar.cshtml" />
     <Content Include="Views\Admin\Siparisler.cshtml" />
     <Content Include="Views\Admin\Uyeler.cshtml" />
+    <Content Include="Views\Admin\Konumlar.cshtml" />
+    <Content Include="Views\Admin\Yorumlar.cshtml" />
+    <Content Include="Views\Admin\CikisYap.cshtml" />
+    <Content Include="Views\Admin\Urunler.cshtml" />
+    <Content Include="Views\Admin\Menuler.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
