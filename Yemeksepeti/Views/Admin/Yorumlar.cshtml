@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewBag.Title = "Yorum Yönetimi";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using Yemeksepeti.Models;
+@model IEnumerable<Yemeksepeti.Models.Comments>
+
+
+
+<div class="col-md-12">
+    <div class="block">
+        <div class="block-heading">
+            <div class="block-controls">
+                <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
+                <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
+            </div>
+        </div>
+        <div class="block-content-outer">
+            <div class="block-content-inner">
+                <div class="table-responsive">
+
+                    <table id="datatable-1" class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Yorum ID</th>
+                                <th>Yorumlayan ID</th>
+                                <th>Firma Adı</th>
+                                <th>Yorum Başlığı</th>
+                                <th>Yorum</th>
+                                <th>Hız Puanı</th>
+                                <th>Servis Puanı</th>
+                                <th>Lezzet Puanı</th>
+                                <th>Düzenle</th>
+                                <th>Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @foreach (var yorum in Model)
+                            {
+                                <tr>
+                                    <td>@yorum.CommentID</td>
+                                    <td>@yorum.OrdererID</td>
+                                    <td>@yorum.SellerID</td>
+                                    <td>@yorum.CommentTitle</td>
+                                    <td>@yorum.Comment</td>
+                                    <td>@yorum.SpeedScore</td>
+                                    <td>@yorum.ServiceScore</td>
+                                    <td>@yorum.TasteScore</td>
+                                    <td><a href="/Admin/YorumGuncelle/@yorum.CommentID">Düzenle</a></td>
+                                    <td><a href="/Admin/YorumSil/@yorum.CommentID">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+@section LeftMenu
+{
+    <div id="mainnav">
+        <ul class="mainnav">
+
+            <li class="menu-item-top">
+                <a href="/Admin/Index" class="top">
+                    <span class="main-menu-icon">
+                        <span aria-hidden="true" class="icon icon-grid-big"></span>
+                    </span>
+                    <span class="main-menu-text">Ana Sayfa</span>
+                </a>
+            </li>
+
+            <li class="menu-item-top">
+                <a href="/Admin/Firmalar" class="top">
+                    <span class="main-menu-icon">
+                        <span aria-hidden="true" class="icon icon-dollar"></span>
+                    </span>
+                    <span class="main-menu-text">Firmalar</span>
+                </a>
+            </li>
+
+            <li class="menu-item-top">
+                <a href="/Admin/Urunler" class="top">
+                    <span class="main-menu-icon">
+                        <span aria-hidden="true" class="icon icon-dollar"></span>
+                    </span>
+                    <span class="main-menu-text">Ürünler</span>
+                </a>
+            </li>
+
+            <li class="menu-item-top">
+                <a href="/Admin/Menuler" class="top">
+                    <span class="main-menu-icon">
+                        <span aria-hidden="true" class="icon icon-dollar"></span>
+                    </span>
+                    <span class="main-menu-text">Menüler</span>
+                </a>
+            </li>
+
+            <li class="menu-item-top">
+                <a href="/Admin/Siparisler" class="top">
+                    <span class="main-menu-icon">
+                        <span aria-hidden="true" class="icon icon-layers"></span>
+                    </span>
+                    <span class="main-menu-text">Siparişler</span>
+                </a>
+            </li>
+
+            <li class="menu-item-top">
+                <a href="/Admin/Uyeler" class="top">
+                    <span class="main-menu-icon">
+                        <span aria-hidden="true" class="icon icon-star"></span>
+                    </span>
+                    <span class="main-menu-text">Üyeler</span>
+                </a>
+            </li>
+
+            <li class="menu-item-top selected">
+                <a href="/Admin/Yorumlar" class="top">
+                    <span class="main-menu-icon">
+                        <span aria-hidden="true" class="icon icon-star"></span>
+                    </span>
+                    <span class="main-menu-text">Yorumlar</span>
+                </a>
+            </li>
+
+            <li class="menu-item-top">
+                <a href="/Admin/Konumlar" class="top">
+                    <span class="main-menu-icon">
+                        <span aria-hidden="true" class="icon icon-star"></span>
+                    </span>
+                    <span class="main-menu-text">Konumlar</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+}
