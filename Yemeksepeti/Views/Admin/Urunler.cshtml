@@ -4,8 +4,8 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-@using Yemeksepeti.ViewModels
-@model IEnumerable<ProductViewModel>
+@using Yemeksepeti.Models;
+@model IEnumerable<Yemeksepeti.Models.UrunTablosu>
 
 <div class="col-md-12">
     <div class="block">
@@ -26,77 +26,25 @@
                         <thead>
                             <tr>
                                 <th>Ürün ID</th>
-                                <th>Firma Adı</th>
                                 <th>Kategori</th>
                                 <th>Ürün Adı</th>
                                 <th>Ürün Açıklaması</th>
-                                <th>Fiyat</th>
                                 <th>Düzenle</th>
                                 <th>Sil</th>
                             </tr>
                         </thead>
                         <tbody>
-
-                            @var urrun = new Model
-
-                           @for (int i = 0; i < Model.Count(); i++)
+                           @foreach (var urun in Model)
                             {
-
-                               <tr>
-                                   <td></td>
-                               </tr>
-
-
-
-
-
-
-
-                            }
-
-
-                            
-
-
-
-
-
-
-
-
-
-
-
-                           @foreach (var urun in Model.)
-                            {
-                               int x = 0;
                                 <tr>
-                                    <td>@urun.Urunler.</td>
-                            }
-
-                           @foreach (var firma in Model.Firmalar)
-                            {
-                                    <td>@firma.UserName</td>
-                            }
-
-                           @foreach (var kategori in Model.Kategoriler)
-                            {
-                                    <td>@kategori.CategoryName</td>
-                            }
-
-
-
-
-
-
-
-                                    <td>Kategori Adı</td>
+                                    <td>@urun.ProductID.</td>
+                                    <td>@urun.CategoryName</td>
                                     <td>@urun.ProductName</td>
-                                    <td>@urun.Description</td>
-                                    <td>@urun.Price</td>
+                                    <td>@urun.Descriptionn</td>
                                     <td><a href="/Admin/UrunGuncelle/@urun.ProductID">Düzenle</a></td>
                                     <td><a href="/Admin/UrunSil/@urun.ProductID">Sil</a></td>
                                 </tr>
+                            }
                         </tbody>
                     </table>
                 </div>

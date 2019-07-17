@@ -27,6 +27,15 @@ namespace Yemeksepeti.Models
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UserTypes> UserTypes { get; set; }
         public virtual DbSet<WorkingHours> WorkingHours { get; set; }
+        public virtual DbSet<MenuTablosu> MenuTablosu { get; set; }
+        public virtual DbSet<Sehirler> Sehirler { get; set; }
+        public virtual DbSet<SiparisTablosu> SiparisTablosu { get; set; }
+        public virtual DbSet<SiparisTablosu_Company> SiparisTablosu_Company { get; set; }
+        public virtual DbSet<SiparisTablosu_Orderer> SiparisTablosu_Orderer { get; set; }
+        public virtual DbSet<UrunTablosu> UrunTablosu { get; set; }
+        public virtual DbSet<YorumTablosu> YorumTablosu { get; set; }
+        public virtual DbSet<YorumTablosu_Company> YorumTablosu_Company { get; set; }
+        public virtual DbSet<YorumTablosu_Orderer> YorumTablosu_Orderer { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -166,6 +175,14 @@ namespace Yemeksepeti.Models
                 .WithRequired(e => e.UserTypes)
                 .HasForeignKey(e => e.UserType)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<MenuTablosu>()
+                .Property(e => e.Price)
+                .HasPrecision(19, 4);
+
+            modelBuilder.Entity<UrunTablosu>()
+                .Property(e => e.Price)
+                .HasPrecision(19, 4);
         }
     }
 }

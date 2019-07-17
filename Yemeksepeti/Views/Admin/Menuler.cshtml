@@ -7,7 +7,7 @@
 
 
 @using Yemeksepeti.Models;
-@model IEnumerable<Yemeksepeti.Models.Menus>
+@model IEnumerable<Yemeksepeti.Models.MenuTablosu>
 
 <div class="col-md-12">
     <div class="block">
@@ -42,9 +42,9 @@
                             {
                                 <tr>
                                     <td>@menu.MenuID</td>
-                                    <td>Firma/Satıcı Adı</td>
+                                    <td>@menu.CompanyName @menu.CompanySurname</td>
                                     <td>@menu.MenuName</td>
-                                    <td>@menu.Description</td>
+                                    <td>@menu.Descriptionn</td>
                                     <td>@menu.Price</td>
                                     <td><a href="/Admin/MenuGuncelle/@menu.MenuID">Düzenle</a></td>
                                     <td><a href="/Admin/MenuSil/@menu.MenuID">Sil</a></td>

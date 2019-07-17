@@ -1002,7 +1002,9 @@
     <Content Include="Content\ui-typography.html" />
     <Content Include="Content\ui-widgets.html" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Classes\Context.cs" />
@@ -1019,17 +1021,25 @@
     <Compile Include="Models\Locations.cs" />
     <Compile Include="Models\MenuContent.cs" />
     <Compile Include="Models\Menus.cs" />
+    <Compile Include="Models\MenuTablosu.cs" />
     <Compile Include="Models\MinOrderAmounts.cs" />
     <Compile Include="Models\Model_YS.cs" />
     <Compile Include="Models\OrderInfo.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\OrderStats.cs" />
     <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\Sehirler.cs" />
+    <Compile Include="Models\SiparisTablosu.cs" />
+    <Compile Include="Models\SiparisTablosu_Company.cs" />
+    <Compile Include="Models\SiparisTablosu_Orderer.cs" />
+    <Compile Include="Models\UrunTablosu.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\UserTypes.cs" />
     <Compile Include="Models\WorkingHours.cs" />
+    <Compile Include="Models\YorumTablosu.cs" />
+    <Compile Include="Models\YorumTablosu_Company.cs" />
+    <Compile Include="Models\YorumTablosu_Orderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

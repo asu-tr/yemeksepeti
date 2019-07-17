@@ -5,15 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using Yemeksepeti.App_Classes;
 using Yemeksepeti.Models;
-using Yemeksepeti.ViewModels;
 
 namespace Yemeksepeti.Controllers
 {
     public class AdminController : Controller
     {
-
-        Model_YS m = new Model_YS();
-
+        
         // GET: Admin
         public ActionResult Index()
         {
@@ -36,18 +33,9 @@ namespace Yemeksepeti.Controllers
         
         public ActionResult Urunler()
         {
-            var Urun = new List<Products>();
-            var Kategori = new List<Categories>();
-            var Firma = new List<Users>();
+            
 
-            var UrunViewModel = new ProductViewModel
-            {
-                Urunler = Urun,
-                Kategoriler = Kategori,
-                Firmalar = Firma
-            };
-
-            return View(UrunViewModel);
+            return View(Context.Baglanti.UrunTablosu.ToList());
         }
         // URUN EKLE EKLE
 
@@ -59,7 +47,7 @@ namespace Yemeksepeti.Controllers
         
         public ActionResult Menuler()
         {
-            return View(Context.Baglanti.Menus.ToList());
+            return View(Context.Baglanti.MenuTablosu.ToList());
         }
         // MENU EKLE EKLE
 
@@ -71,7 +59,7 @@ namespace Yemeksepeti.Controllers
         
         public ActionResult Siparisler()
         {
-            return View(Context.Baglanti.Orders.ToList());
+            return View(Context.Baglanti.SiparisTablosu.ToList());
         }
         // SIPARIS DUZENLE SAYFASI EKLE
 
@@ -91,7 +79,7 @@ namespace Yemeksepeti.Controllers
         
         public ActionResult Yorumlar()
         {
-            return View(Context.Baglanti.Comments.ToList());
+            return View(Context.Baglanti.YorumTablosu.ToList());
         }
         // yorum DUZENLE SAYFASI EKLE
 

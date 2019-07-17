@@ -44,8 +44,9 @@ namespace Yemeksepeti.Models
         public string UserSurname { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime UserDateofBirth { get; set; }
+        public DateTime? UserDateofBirth { get; set; }
 
+        [Required]
         [StringLength(100)]
         public string UserAddress { get; set; }
 

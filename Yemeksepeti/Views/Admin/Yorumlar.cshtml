@@ -5,7 +5,7 @@
 }
 
 @using Yemeksepeti.Models;
-@model IEnumerable<Yemeksepeti.Models.Comments>
+@model IEnumerable<Yemeksepeti.Models.YorumTablosu>
 
 
 
@@ -25,8 +25,9 @@
                         <thead>
                             <tr>
                                 <th>Yorum ID</th>
-                                <th>Yorumlayan ID</th>
                                 <th>Firma Adı</th>
+                                <th>Yorumlayan ID</th>
+                                <th>Yorumlayan Adı Soyadı</th>
                                 <th>Yorum Başlığı</th>
                                 <th>Yorum</th>
                                 <th>Hız Puanı</th>
@@ -41,8 +42,9 @@
                             {
                                 <tr>
                                     <td>@yorum.CommentID</td>
+                                    <td>@yorum.CompanyName @yorum.CompanySurname</td>
                                     <td>@yorum.OrdererID</td>
-                                    <td>@yorum.SellerID</td>
+                                    <td>@yorum.OrdererName @yorum.OrdererSurname</td>
                                     <td>@yorum.CommentTitle</td>
                                     <td>@yorum.Comment</td>
                                     <td>@yorum.SpeedScore</td>
