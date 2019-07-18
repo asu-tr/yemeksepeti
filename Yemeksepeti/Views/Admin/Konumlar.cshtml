@@ -12,7 +12,7 @@
     <div class="block">
         <div class="block-heading">
             <div class="main-text h2">
-                <a href="/Admin/KonumEkle">Yeni Konum Ekle</a>
+                <a href="/Admin/KonumEkle" class="btn btn-primary rounded" role="button">Yeni Konum Ekle</a>
             </div>
             <div class="block-controls">
                 <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
@@ -29,7 +29,6 @@
                                 <th>Konum ID</th>
                                 <th>Şehir</th>
                                 <th>Semt</th>
-                                <th>Posta Kodu</th>
                                 <th>Düzenle</th>
                                 <th>Sil</th>
                             </tr>
@@ -42,7 +41,6 @@
                                     <td>@konum.LocationID</td>
                                     <td>@konum.City</td>
                                     <td>@konum.District</td>
-                                    <td>@konum.PostalCode</td>
                                     <td><a href="/Admin/KonumGuncelle/@konum.LocationID">Düzenle</a></td>
                                     <td><a href="/Admin/KonumSil/@konum.LocationID">Sil</a></td>
                                 </tr>

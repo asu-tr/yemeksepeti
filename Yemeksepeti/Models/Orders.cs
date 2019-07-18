@@ -11,6 +11,7 @@ namespace Yemeksepeti.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Orders()
         {
+            Comments = new HashSet<Comments>();
             OrderInfo = new HashSet<OrderInfo>();
         }
 
@@ -24,6 +25,9 @@ namespace Yemeksepeti.Models
         public int SellerID { get; set; }
 
         public int OrderStatusID { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comments> Comments { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderInfo> OrderInfo { get; set; }

@@ -6,12 +6,12 @@ namespace Yemeksepeti.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class SiparisTablosu_Company
+    public partial class YorumTablosu_Seller
     {
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int OrderID { get; set; }
+        public int CommentID { get; set; }
 
         [Key]
         [Column(Order = 1)]

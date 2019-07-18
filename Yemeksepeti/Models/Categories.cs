@@ -17,7 +17,8 @@ namespace Yemeksepeti.Models
         [Key]
         public int CategoryID { get; set; }
 
-        [StringLength(25)]
+        [Required]
+        [StringLength(20)]
         public string CategoryName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

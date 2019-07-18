@@ -18,7 +18,7 @@ namespace Yemeksepeti.Models
             MinOrderAmounts = new HashSet<MinOrderAmounts>();
             Orders = new HashSet<Orders>();
             Orders1 = new HashSet<Orders>();
-            Products = new HashSet<Products>();
+            ServedProducts = new HashSet<ServedProducts>();
             WorkingHours = new HashSet<WorkingHours>();
         }
 
@@ -46,7 +46,6 @@ namespace Yemeksepeti.Models
         [Column(TypeName = "date")]
         public DateTime? UserDateofBirth { get; set; }
 
-        [Required]
         [StringLength(100)]
         public string UserAddress { get; set; }
 
@@ -57,9 +56,6 @@ namespace Yemeksepeti.Models
         [Required]
         [StringLength(20)]
         public string UserDistrict { get; set; }
-
-        [StringLength(10)]
-        public string UserPostalCode { get; set; }
 
         public int? UserLocationID { get; set; }
 
@@ -96,7 +92,7 @@ namespace Yemeksepeti.Models
         public virtual ICollection<Orders> Orders1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Products> Products { get; set; }
+        public virtual ICollection<ServedProducts> ServedProducts { get; set; }
 
         public virtual UserTypes UserTypes { get; set; }
 

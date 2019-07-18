@@ -10,6 +10,8 @@ namespace Yemeksepeti.Controllers
 {
     public class AdminController : Controller
     {
+
+        Model_YS m = new Model_YS();
         
         // GET: Admin
         public ActionResult Index()
@@ -37,7 +39,24 @@ namespace Yemeksepeti.Controllers
 
             return View(Context.Baglanti.UrunTablosu.ToList());
         }
-        // URUN EKLE EKLE
+        
+
+        //underconstruction
+        public ActionResult UrunEkle()
+        {
+            ViewBag.Kategoriler = Context.Baglanti.Categories.ToList();
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UrunEkle(Products urun)
+        {
+            m.Products.Add(urun);
+            m.SaveChanges();
+
+            return RedirectToAction("Urunler");
+        }
 
         // URUN DUZENLE SAYFASI EKLE
 
@@ -85,8 +104,8 @@ namespace Yemeksepeti.Controllers
 
         // yorum SIL SAYFASI EKLE
 
-        
-        
+
+
         public ActionResult Konumlar()
         {
             return View(Context.Baglanti.Locations.ToList());

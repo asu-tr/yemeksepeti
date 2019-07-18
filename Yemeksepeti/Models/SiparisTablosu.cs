@@ -21,12 +21,12 @@ namespace Yemeksepeti.Models
         [Key]
         [Column(Order = 2)]
         [StringLength(30)]
-        public string CompanyName { get; set; }
+        public string SellerName { get; set; }
 
         [Key]
         [Column(Order = 3)]
         [StringLength(20)]
-        public string CompanySurname { get; set; }
+        public string SellerSurname { get; set; }
 
         [Key]
         [Column(Order = 4)]

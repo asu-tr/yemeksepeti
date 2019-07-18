@@ -30,6 +30,7 @@
                                 <th>Sipariş Veren ID</th>
                                 <th>Sipariş Veren</th>
                                 <th>Sipariş Durumu</th>
+                                <th>Sipariş Tutarı</th>
                                 <th>Düzenle</th>
                             </tr>
                         </thead>
@@ -39,9 +40,11 @@
                                 <tr>
                                     <td>@siparis.OrderID</td>
                                     <td>@siparis.OrderTime</td>
-                                    <td>@siparis.CompanyName @siparis.CompanySurname</td>
+                                    <td>@siparis.SellerName @siparis.SellerSurname</td>
                                     <td>@siparis.OrdererID</td>
                                     <td>@siparis.OrdererName @siparis.OrdererSurname</td>
+                                    <td>@siparis.Status</td>
+                                    <td>WILL BE UPDATED SOON</td>
                                     <td><a href="/Admin/SiparisGuncelle/@siparis.OrderID">Düzenle</a></td>
                                 </tr>
                             }

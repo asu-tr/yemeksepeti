@@ -17,19 +17,19 @@ namespace Yemeksepeti.Models
         [Key]
         [Column(Order = 1)]
         [StringLength(30)]
-        public string CompanyName { get; set; }
+        public string SellerName { get; set; }
 
         [Key]
         [Column(Order = 2)]
         [StringLength(20)]
-        public string CompanySurname { get; set; }
+        public string SellerSurname { get; set; }
 
         [Key]
         [Column(Order = 3)]
         [StringLength(25)]
         public string MenuName { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string Descriptionn { get; set; }
 
         [Key]

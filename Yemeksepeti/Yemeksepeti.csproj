@@ -1029,16 +1029,18 @@
     <Compile Include="Models\OrderStats.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Sehirler.cs" />
+    <Compile Include="Models\ServedProducts.cs" />
     <Compile Include="Models\SiparisTablosu.cs" />
-    <Compile Include="Models\SiparisTablosu_Company.cs" />
     <Compile Include="Models\SiparisTablosu_Orderer.cs" />
+    <Compile Include="Models\SiparisTablosu_Seller.cs" />
+    <Compile Include="Models\SunulanYemekler.cs" />
     <Compile Include="Models\UrunTablosu.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\UserTypes.cs" />
     <Compile Include="Models\WorkingHours.cs" />
     <Compile Include="Models\YorumTablosu.cs" />
-    <Compile Include="Models\YorumTablosu_Company.cs" />
     <Compile Include="Models\YorumTablosu_Orderer.cs" />
+    <Compile Include="Models\YorumTablosu_Seller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1104,6 +1106,7 @@
     <Content Include="Views\Admin\CikisYap.cshtml" />
     <Content Include="Views\Admin\Urunler.cshtml" />
     <Content Include="Views\Admin\Menuler.cshtml" />
+    <Content Include="Views\Admin\UrunEkle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,67 +1,62 @@
 ﻿
 @{
-    ViewBag.Title = "Firma Yönetimi";
+    ViewBag.Title = "Ürün Ekle";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 @using Yemeksepeti.Models;
-@model IEnumerable<Yemeksepeti.Models.Users>
 
 
-
-<div class="col-md-12">
-    <div class="block">
-        <div class="block-heading">
-            <div class="main-text h2">
-                <a href="/Admin/FirmaEkle" class="btn btn-primary rounded" role="button">Yeni Firma Ekle</a>
+<div class="row">
+    <div class="col-md-12">
+        <div class="block">
+            <div class="block-heading">
+                <h1 class="JustifyCenter">Yeni Ürün Ekle</h1>
             </div>
-            <div class="block-controls">
-                <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
-                <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
-            </div>
-        </div>
-        <div class="block-content-outer">
-            <div class="block-content-inner">
-                <div class="table-responsive">
-                    <table id="datatable-1" class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Firma ID</th>
-                                <th>Firma Adı</th>
-                                <th>E-posta</th>
-                                <th>Adres</th>
-                                <th>Şehir</th>
-                                <th>Semt</th>
-                                <th>Telefon</th>
-                                <th>Düzenle</th>
-                                <th>Sil</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                           @foreach (var uye in Model)
-                            {
-                                if (uye.UserType == 2)
+            <div class="block-content-outer">
+                <div class="block-content-inner">
+                    <form role="form" action="/Admin/UrunEkle" id="hidingSuccessForm" method="post">
+
+                        <div class="form-group">
+                            <label>Ürün Adı</label>
+                            <input type="text" class="form-control" name="ProductName" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ürün Açıklaması</label>
+                            <input type="text" class="form-control" name="Descriptionn" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <select class="form-control" name="CategoryID" style="width: 200px;">
+                                @foreach (Categories kategori in ViewBag.Kategoriler)
                                 {
-                                    <tr>
-                                        <td>@uye.UserID</td>
-                                        <td>@uye.UserName, @uye.UserSurname</td>
-                                        <td>@uye.UserEmail</td>
-                                        <td>@uye.UserAddress</td>
-                                        <td>@uye.UserCity</td>
-                                        <td>@uye.UserDistrict</td>
-                                        <td>@uye.UserTel</td>
-                                        <td><a href="/Admin/UyeGuncelle/@uye.UserID">Düzenle</a></td>
-                                        <td><a href="/Admin/UyeSil/@uye.UserID">Sil</a></td>
-                                    </tr>
+                                    <option value="@kategori.CategoryID">@kategori.CategoryName</option>
                                 }
-                            }
-                        </tbody>
-                    </table>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info">Ekle</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -79,7 +74,7 @@
                 </a>
             </li>
 
-            <li class="menu-item-top selected">
+            <li class="menu-item-top">
                 <a href="/Admin/Firmalar" class="top">
                     <span class="main-menu-icon">
                         <span aria-hidden="true" class="icon icon-dollar"></span>
@@ -88,7 +83,7 @@
                 </a>
             </li>
 
-            <li class="menu-item-top">
+            <li class="menu-item-top selected">
                 <a href="/Admin/Urunler" class="top">
                     <span class="main-menu-icon">
                         <span aria-hidden="true" class="icon icon-dollar"></span>

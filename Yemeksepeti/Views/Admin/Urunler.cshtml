@@ -11,8 +11,7 @@
     <div class="block">
         <div class="block-heading">
             <div class="main-text h2">
-                <!-- BUTON AYARLARINI YAP-->
-                <a href="/Admin/UrunEkle">Yeni Ürün Ekle</a>
+                <a href="/Admin/UrunEkle" class="btn btn-primary rounded" role="button">Yeni Ürün Ekle</a>
             </div>
             <div class="block-controls">
                 <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
@@ -26,9 +25,9 @@
                         <thead>
                             <tr>
                                 <th>Ürün ID</th>
-                                <th>Kategori</th>
                                 <th>Ürün Adı</th>
                                 <th>Ürün Açıklaması</th>
+                                <th>Kategori</th>
                                 <th>Düzenle</th>
                                 <th>Sil</th>
                             </tr>
@@ -36,14 +35,14 @@
                         <tbody>
                            @foreach (var urun in Model)
                             {
-                                <tr>
-                                    <td>@urun.ProductID.</td>
-                                    <td>@urun.CategoryName</td>
-                                    <td>@urun.ProductName</td>
-                                    <td>@urun.Descriptionn</td>
-                                    <td><a href="/Admin/UrunGuncelle/@urun.ProductID">Düzenle</a></td>
-                                    <td><a href="/Admin/UrunSil/@urun.ProductID">Sil</a></td>
-                                </tr>
+                            <tr>
+                                <td>@urun.ProductID</td>
+                                <td>@urun.ProductName</td>
+                                <td>@urun.Descriptionn</td>
+                                <td>@urun.CategoryName</td>
+                                <td><a href="/Admin/UrunGuncelle/@urun.ProductID">Düzenle</a></td>
+                                <td><a href="/Admin/UrunSil/@urun.ProductID">Sil</a></td>
+                            </tr>
                             }
                         </tbody>
                     </table>

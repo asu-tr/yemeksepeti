@@ -24,7 +24,7 @@ namespace Yemeksepeti.Models
 
         public int SellerID { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string Descriptionn { get; set; }
 
         [Column(TypeName = "money")]

@@ -24,18 +24,20 @@ namespace Yemeksepeti.Models
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<OrderStats> OrderStats { get; set; }
         public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<ServedProducts> ServedProducts { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UserTypes> UserTypes { get; set; }
         public virtual DbSet<WorkingHours> WorkingHours { get; set; }
         public virtual DbSet<MenuTablosu> MenuTablosu { get; set; }
         public virtual DbSet<Sehirler> Sehirler { get; set; }
         public virtual DbSet<SiparisTablosu> SiparisTablosu { get; set; }
-        public virtual DbSet<SiparisTablosu_Company> SiparisTablosu_Company { get; set; }
         public virtual DbSet<SiparisTablosu_Orderer> SiparisTablosu_Orderer { get; set; }
+        public virtual DbSet<SiparisTablosu_Seller> SiparisTablosu_Seller { get; set; }
+        public virtual DbSet<SunulanYemekler> SunulanYemekler { get; set; }
         public virtual DbSet<UrunTablosu> UrunTablosu { get; set; }
         public virtual DbSet<YorumTablosu> YorumTablosu { get; set; }
-        public virtual DbSet<YorumTablosu_Company> YorumTablosu_Company { get; set; }
         public virtual DbSet<YorumTablosu_Orderer> YorumTablosu_Orderer { get; set; }
+        public virtual DbSet<YorumTablosu_Seller> YorumTablosu_Seller { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -49,10 +51,6 @@ namespace Yemeksepeti.Models
                 .HasMany(e => e.Products)
                 .WithRequired(e => e.Categories)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Locations>()
-                .Property(e => e.PostalCode)
-                .IsUnicode(false);
 
             modelBuilder.Entity<Locations>()
                 .HasMany(e => e.ArrivalTime)
@@ -89,6 +87,11 @@ namespace Yemeksepeti.Models
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<Orders>()
+                .HasMany(e => e.Comments)
+                .WithRequired(e => e.Orders)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Orders>()
                 .HasMany(e => e.OrderInfo)
                 .WithRequired(e => e.Orders)
                 .WillCascadeOnDelete(false);
@@ -100,13 +103,18 @@ namespace Yemeksepeti.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Products>()
-                .Property(e => e.Price)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<Products>()
                 .HasMany(e => e.MenuContent)
                 .WithRequired(e => e.Products)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Products>()
+                .HasMany(e => e.ServedProducts)
+                .WithRequired(e => e.Products)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ServedProducts>()
+                .Property(e => e.Price)
+                .HasPrecision(19, 4);
 
             modelBuilder.Entity<Users>()
                 .Property(e => e.UserTel)
@@ -159,7 +167,7 @@ namespace Yemeksepeti.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Users>()
-                .HasMany(e => e.Products)
+                .HasMany(e => e.ServedProducts)
                 .WithRequired(e => e.Users)
                 .HasForeignKey(e => e.SellerID)
                 .WillCascadeOnDelete(false);
@@ -180,7 +188,7 @@ namespace Yemeksepeti.Models
                 .Property(e => e.Price)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<UrunTablosu>()
+            modelBuilder.Entity<SunulanYemekler>()
                 .Property(e => e.Price)
                 .HasPrecision(19, 4);
         }

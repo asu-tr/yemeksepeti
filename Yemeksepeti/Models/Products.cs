@@ -13,12 +13,11 @@ namespace Yemeksepeti.Models
         {
             MenuContent = new HashSet<MenuContent>();
             OrderInfo = new HashSet<OrderInfo>();
+            ServedProducts = new HashSet<ServedProducts>();
         }
 
         [Key]
         public int ProductID { get; set; }
-
-        public int SellerID { get; set; }
 
         public int CategoryID { get; set; }
 
@@ -29,9 +28,6 @@ namespace Yemeksepeti.Models
         [StringLength(50)]
         public string Descriptionn { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal Price { get; set; }
-
         public virtual Categories Categories { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -40,6 +36,7 @@ namespace Yemeksepeti.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderInfo> OrderInfo { get; set; }
 
-        public virtual Users Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ServedProducts> ServedProducts { get; set; }
     }
 }
