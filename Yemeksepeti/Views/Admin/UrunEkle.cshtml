@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <label>Kategori</label>
                             <select class="form-control" name="CategoryID" style="width: 200px;">
-                                @foreach (Categories kategori in ViewBag.Kategoriler)
+                               @foreach (Categories kategori in ViewBag.Kategoriler)
                                 {
                                     <option value="@kategori.CategoryID">@kategori.CategoryName</option>
                                 }
@@ -75,21 +75,29 @@
             </li>
 
             <li class="menu-item-top">
-                <a href="/Admin/Firmalar" class="top">
+                <a href="/Admin/#" class="top">
                     <span class="main-menu-icon">
                         <span aria-hidden="true" class="icon icon-dollar"></span>
                     </span>
                     <span class="main-menu-text">Firmalar</span>
                 </a>
+                <ul>
+                    <li><a href="/Admin/Firmalar">Firma Listesi</a></li>
+                    <li><a href="/Admin/FirmaEkle">Firma Ekle</a></li>
+                </ul>
             </li>
 
             <li class="menu-item-top selected">
-                <a href="/Admin/Urunler" class="top">
+                <a href="/Admin/#" class="top">
                     <span class="main-menu-icon">
                         <span aria-hidden="true" class="icon icon-dollar"></span>
                     </span>
                     <span class="main-menu-text">Ürünler</span>
                 </a>
+                <ul>
+                    <li><a href="/Admin/Urunler">Ürün Listesi</a></li>
+                    <li><a href="/Admin/UrunEkle">Ürün Ekle</a></li>
+                </ul>
             </li>
 
             <li class="menu-item-top">
@@ -129,12 +137,16 @@
             </li>
 
             <li class="menu-item-top">
-                <a href="/Admin/Konumlar" class="top">
+                <a href="/Admin/#" class="top">
                     <span class="main-menu-icon">
                         <span aria-hidden="true" class="icon icon-star"></span>
                     </span>
                     <span class="main-menu-text">Konumlar</span>
                 </a>
+                <ul>
+                    <li><a href="/Admin/Konumlar">Konum Listesi</a></li>
+                    <li><a href="/Admin/KonumEkle">Konum Ekle</a></li>
+                </ul>
             </li>
         </ul>
     </div>

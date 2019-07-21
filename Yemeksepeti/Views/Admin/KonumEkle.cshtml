@@ -1,60 +1,57 @@
 ﻿
 @{
-    ViewBag.Title = "Sipariş Yönetimi";
+    ViewBag.Title = "KonumEkle";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 @using Yemeksepeti.Models;
-@model IEnumerable<Yemeksepeti.Models.SiparisTablosu>
+@model IEnumerable<Yemeksepeti.Models.Sehirler>
 
-
-
-<div class="col-md-12">
-    <div class="block">
-        <div class="block-heading">
-            <div class="block-controls">
-                <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
-                <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
+<div class="row">
+    <div class="col-md-12">
+        <div class="block">
+            <div class="block-heading">
+                <h1 class="JustifyCenter">Yeni Konum Ekle</h1>
             </div>
-        </div>
-        <div class="block-content-outer">
-            <div class="block-content-inner">
-                <div class="table-responsive">
+            <div class="block-content-outer">
+                <div class="block-content-inner">
+                    <form role="form" action="/Admin/KonumEkle" id="hidingSuccessForm" method="post">
 
-                    <table id="datatable-1" class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Sipariş ID</th>
-                                <th>Sipariş Zamanı</th>
-                                <th>Firma Adı</th>
-                                <th>Sipariş Veren ID</th>
-                                <th>Sipariş Veren</th>
-                                <th>Sipariş Durumu</th>
-                                <th>Sipariş Tutarı</th>
-                                <th>Düzenle</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                           @foreach (var siparis in Model)
+                        <div class="radio">
+                            
+                           @foreach (Sehirler konum in Model)
                             {
-                                <tr>
-                                    <td>@siparis.OrderID</td>
-                                    <td>@siparis.OrderTime</td>
-                                    <td>@siparis.SellerName @siparis.SellerSurname</td>
-                                    <td>@siparis.OrdererID</td>
-                                    <td>@siparis.OrdererName @siparis.OrdererSurname</td>
-                                    <td>@siparis.Status</td>
-                                    <td>WILL BE UPDATED SOON</td>
-                                    <td><a href="/Admin/SiparisGuncelle/@siparis.OrderID">Düzenle</a></td>
-                                </tr>
+                               <label>
+                                    <input type="radio" name="City" id="optionsRadios1" value="@konum.City">
+                                    @konum.City
+                               </label><br />
                             }
-                        </tbody>
-                    </table>
+
+                            <label>
+                                <input type="radio" name="City" id="optionsRadios1" />
+                                <input type="text" class="form-control" name="City" />
+                            </label>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Semt</label>
+                            <input type="text" class="form-control" name="District" />
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info">Ekle</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 
 
 
@@ -73,29 +70,21 @@
             </li>
 
             <li class="menu-item-top">
-                <a href="/Admin/#" class="top">
+                <a href="/Admin/Firmalar" class="top">
                     <span class="main-menu-icon">
                         <span aria-hidden="true" class="icon icon-dollar"></span>
                     </span>
                     <span class="main-menu-text">Firmalar</span>
                 </a>
-                <ul>
-                    <li><a href="/Admin/Firmalar">Firma Listesi</a></li>
-                    <li><a href="/Admin/FirmaEkle">Firma Ekle</a></li>
-                </ul>
             </li>
 
             <li class="menu-item-top">
-                <a href="/Admin/#" class="top">
+                <a href="/Admin/Urunler" class="top">
                     <span class="main-menu-icon">
                         <span aria-hidden="true" class="icon icon-dollar"></span>
                     </span>
                     <span class="main-menu-text">Ürünler</span>
                 </a>
-                <ul>
-                    <li><a href="/Admin/Urunler">Ürün Listesi</a></li>
-                    <li><a href="/Admin/UrunEkle">Ürün Ekle</a></li>
-                </ul>
             </li>
 
             <li class="menu-item-top">
@@ -107,7 +96,7 @@
                 </a>
             </li>
 
-            <li class="menu-item-top selected">
+            <li class="menu-item-top">
                 <a href="/Admin/Siparisler" class="top">
                     <span class="main-menu-icon">
                         <span aria-hidden="true" class="icon icon-layers"></span>
@@ -146,6 +135,7 @@
                     <li><a href="/Admin/KonumEkle">Konum Ekle</a></li>
                 </ul>
             </li>
+
         </ul>
     </div>
 }
