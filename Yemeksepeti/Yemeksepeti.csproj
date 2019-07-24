@@ -1011,6 +1011,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1097,7 +1098,6 @@
     <Content Include="Views\Home\CreateAccount.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Shared\adminkenardakiyer.cshtml" />
     <Content Include="Views\Admin\Firmalar.cshtml" />
     <Content Include="Views\Admin\Siparisler.cshtml" />
     <Content Include="Views\Admin\Uyeler.cshtml" />
@@ -1109,6 +1109,10 @@
     <Content Include="Views\Admin\UrunEkle.cshtml" />
     <Content Include="Views\Admin\KonumEkle.cshtml" />
     <Content Include="Views\Admin\FirmaEkle.cshtml" />
+    <Content Include="Views\Shared\SiteLayout.cshtml" />
+    <Content Include="Views\Home\Sepet.cshtml" />
+    <Content Include="Views\Site\Restoranlar.cshtml" />
+    <Content Include="Views\Site\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

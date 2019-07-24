@@ -21,15 +21,13 @@ namespace Yemeksepeti.Controllers
 
             List<Locations> loc = m.Locations.ToList();
             ViewBag.Locations = loc;
-
-
             
-
             return View();
+        }
 
-
-
-
+        public PartialViewResult Sepet()
+        {
+            return PartialView();
         }
     }
 }
