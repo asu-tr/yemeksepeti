@@ -4,6 +4,15 @@
     Layout = null;
 }
 
+@section head{
+        <style>
+            #hata{
+                color:red;
+                font-size: 16px;
+            }
+        </style>
+    }
+
 
 
 <div class="row">
@@ -46,6 +55,9 @@
                         </div>
 
                     </form>
+
+                    <span id="hata">@ViewBag.Mesaj</span>
+
                 </div>
             </div>
         </div>

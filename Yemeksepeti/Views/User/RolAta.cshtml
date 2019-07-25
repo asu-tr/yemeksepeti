@@ -1,56 +1,47 @@
 ﻿
 @{
-    ViewBag.Title = "Üyeler";
+    ViewBag.Title = "RolAta";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-@using System.Web.Security
-@model MembershipUserCollection
 
 
-
-<div class="col-md-12">
-    <div class="block">
-        <div class="block-heading">
-            <div class="main-text h2">
-                <a href="/User/Ekle" class="btn btn-primary rounded" role="button">Yeni Kullanıcı Ekle</a>
+<div class="row">
+    <div class="col-md-12">
+        <div class="block">
+            <div class="block-heading">
+                <h1 class="JustifyCenter">Yeni Rol Ata</h1>
             </div>
-            <div class="block-controls">
+            <div class="block-content-outer">
+                <div class="block-content-inner">
+                    <form role="form" action="/User/RolAta" id="hidingSuccessForm" method="post">
 
-                <a class="btn btn-primary" href="/User/RolAta/">Rol Ekle</a>
-                <span aria-hidden="true" class="icon icon-cross icon-size-medium block-control-remove"></span>
-                <span aria-hidden="true" class="icon icon-arrow-down icon-size-medium block-control-collapse"></span>
-            </div>
-        </div>
-        <div class="block-content-outer">
-            <div class="block-content-inner">
-                <div class="table-responsive">
+                        <div class="form-group">
+                            <label>Kullanıcı Adı:</label>
+                            <select name="KullaniciAdi" class="form-control">
+                                @foreach (MembershipUser mu in ViewBag.Kullanicilar)
+                                {
+                                    <option value="@mu.UserName">@mu.UserName</option>
+                                }
+                            </select>
+                        </div>
 
-                    <table id="datatable-1" class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Kullanıcı Adı</th>
-                                <th>Email</th>
-                                <th>Kayıt Tarihi</th>
-                                <th>Son Giriş Tarihi</th>
-                                <th>Rolleri</th>
-                                <th>Sil</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (MembershipUser mu in Model)
-                            {
-                                <tr>
-                                    <td>@mu.UserName</td>
-                                    <td>@mu.Email</td>
-                                    <td>@mu.CreationDate</td>
-                                    <td>@mu.LastLoginDate</td>
-                                    <td><a class="btn btn-primary rolleri" data-uyeadi="@mu.UserName">Rolleri</a></td>
-                                    <td><a href="#" class="btn btn-danger uyeSil" data-uyeid="@mu.ProviderUserKey">Sil</a></td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                        <div class="form-group">
+                            <label>Rol:</label>
+                            <select name="RolAdi" class="form-control">
+                               @foreach (string rol in ViewBag.Roller)
+                                {
+                                    <option value="@rol">@rol</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info">Ekle</button>
+                        </div>
+
+                    </form>
+
                 </div>
             </div>
         </div>
@@ -59,50 +50,6 @@
 
 
 
-
-
-
-
-@section scripts{
-    <script src="~/Content/assets/js/required/jquery-1.11.1.min.js"></script>
-    <script>
-        $(".rolleri").click(function () {
-            var ka = $(this).data("uyeadi");
-            $.ajax({
-                type: "POST",
-                url: "/User/UyeRolleri/",
-                data: { kullaniciAdi: ka },
-                success: function (veri) {
-                    alert(veri);
-                }
-            });
-        });
-    </script>
-    <script>
-        $(".uyeSil").click(function () {
-            var sonuc = confirm("Kayıt Silinsin Mi?");
-            if (sonuc) {
-                var uyeid = $(this).data("uyeid")
-
-                $.ajax({
-                    type: "POST",
-                    url: "/Users/Sil" + uyeid,
-                    success: function () {
-                        alert("Kayıt Silindi");
-                        window.location.replace("/User/Index");
-                    },
-                    error: function () {
-                        alert("Kayıt silme esnasında hata oluştu.");
-                    }
-
-                });
-            }
-            else {
-
-            }
-        })
-    </script>
-}
 
 
 
@@ -197,4 +144,5 @@
 
         </ul>
     </div>
-}
+ }
+

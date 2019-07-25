@@ -79,7 +79,6 @@
                             <span class="icon-bar"></span>
                         </button>
                         <!-- END Mobile Menu Toggle -->
-
                         <!-- START Header Info Container -->
                         <div class="header-info">
                             <!-- START Header User Profile -->
@@ -119,7 +118,7 @@
         <div id="body-container">
             <!-- START Left Column -->
             <div id="left-column" class="">
-               @RenderSection("LeftMenu", required: true)
+                @RenderSection("LeftMenu", required: true)
             </div>
             <!-- END Left Column -->
             <!-- START Right Column -->
@@ -133,11 +132,9 @@
                 </div>
                 <!-- END Footer Container -->
             </div>
+            <!-- END Right Column -->
         </div>
-    </div>
-    <!-- END Right Column -->
-    </div>
-    <!-- END Body Container -->
+        <!-- END Body Container -->
     </div><!-- /.container -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- Required JS Files -->
@@ -171,5 +168,7 @@
     <!-- add additional User Editable files here -->
     <!-- Demo JS Files -->
     <script type="text/javascript" src="/Content/assets/js/demo-files/ecommerce-dashboard-1.js"></script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>

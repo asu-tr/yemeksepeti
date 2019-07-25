@@ -29,5 +29,8 @@ namespace Yemeksepeti.Controllers
         {
             return PartialView();
         }
+
+
+        //sifremiunuttumeklde
     }
 }
