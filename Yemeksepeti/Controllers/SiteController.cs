@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Yemeksepeti.App_Classes;
+using Yemeksepeti.Models;
 
 namespace Yemeksepeti.Controllers
 {
@@ -44,6 +45,17 @@ namespace Yemeksepeti.Controllers
         {
             var data = Context.Baglanti.Users.ToList();
             return PartialView(data);
+        }
+
+        public void SepeteEkle(int id)
+        {
+            SepetItem si = new SepetItem();
+            Products u = Context.Baglanti.Products.FirstOrDefault(x => x.ProductID == id);
+
+            si.Urun = u;
+            si.Adet = 1;
+            Sepet s = new Sepet();
+            s.SepeteEkle(si);
         }
     }
 }

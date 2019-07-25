@@ -1008,10 +1008,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Classes\Context.cs" />
+    <Compile Include="App_Classes\Kullanici.cs" />
+    <Compile Include="App_Classes\Sepet.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1113,6 +1116,9 @@
     <Content Include="Views\Home\Sepet.cshtml" />
     <Content Include="Views\Site\Restoranlar.cshtml" />
     <Content Include="Views\Site\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Ekle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

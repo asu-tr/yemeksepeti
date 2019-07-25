@@ -1,10 +1,10 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Üye Yönetimi";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 @using Yemeksepeti.Models;
+
 @model IEnumerable<Yemeksepeti.Models.Users>
 
 
@@ -66,12 +66,6 @@
 </div>
 
 
-
-
-
-
-
-
 @section LeftMenu
 {
 <div id="mainnav">
@@ -131,7 +125,7 @@
         </li>
 
         <li class="menu-item-top selected">
-            <a href="/Admin/Uyeler" class="top">
+            <a href="/User/Index" class="top">
                 <span class="main-menu-icon">
                     <span aria-hidden="true" class="icon icon-star"></span>
                 </span>
