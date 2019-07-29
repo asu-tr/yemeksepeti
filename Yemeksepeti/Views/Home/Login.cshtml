@@ -87,18 +87,18 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <form role="form" class="login-form form-horizontal" method="post" action="index.html">
+                                <form role="form" class="login-form form-horizontal" method="post" action="/Home/Login">
                                     <div class="form-group">
                                         <label for="inputEmail" class="col-sm-3 control-label">E-posta:</label>
                                         <div class="col-sm-9">
-                                            <input autocomplete="off" class="form-control" id="inputEmail" placeholder="Email" type="email" name="email">
+                                            <input autocomplete="off" class="form-control" id="inputEmail" placeholder="Email" type="email" name="KullaniciAdi">
                                             <span class="help-block text-muted">Geçerli E-posta: demo@ornek.com</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputPassword" class="col-sm-3 control-label">Şifre:</label>
                                         <div class="col-sm-9">
-                                            <input autocomplete="off" class="form-control" id="inputPassword" placeholder="Password" type="password" name="password">
+                                            <input autocomplete="off" class="form-control" id="inputPassword" placeholder="Password" type="password" name="Sifre">
                                             <span class="help-block text-muted">Geçerli Şifre: 123</span>
                                         </div>
                                     </div>
@@ -118,13 +118,18 @@
                                         </div>
                                     </div>
                                 </form>
+                               @if (ViewBag.Mesaj != null)
+                                {
+                                    <p style="color:red">@ViewBag.Mesaj</p>
+                                }
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="change-section">
                                     <h3 class="heading">Hesabın Yok Mu?</h3>
-                                    <a href="/Home/CreateAccount" class="btn btn-default btn-block">Yeni Hesap Oluştur</a>
+                                    <a href="/User/Ekle" class="btn btn-default btn-block">Yeni Hesap Oluştur</a>
                                 </div>
                             </div>
                         </div>

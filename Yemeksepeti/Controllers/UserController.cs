@@ -9,6 +9,7 @@ using Yemeksepeti.Models;
 
 namespace Yemeksepeti.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         Model_YS m = new Model_YS();
@@ -94,6 +95,7 @@ namespace Yemeksepeti.Controllers
         [HttpPost]
         public ActionResult RolAta(string KullaniciAdi, string RolAdi)
         {
+
             Roles.AddUserToRole(KullaniciAdi, RolAdi);
             return RedirectToAction("Index");
         }

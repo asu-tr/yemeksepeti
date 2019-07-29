@@ -8,6 +8,7 @@ using Yemeksepeti.Models;
 
 namespace Yemeksepeti.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
 
