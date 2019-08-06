@@ -42,11 +42,11 @@ namespace Yemeksepeti.Controllers
 
 
         //add vew
-        public PartialViewResult Restoranlar()
+       /* public PartialViewResult Restoranlar()
         {
             var data = Context.Baglanti.Users.ToList();
             return PartialView(data);
-        }
+        }*/
 
         public void SepeteEkle(int id)
         {

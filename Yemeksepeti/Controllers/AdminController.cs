@@ -8,60 +8,15 @@ using Yemeksepeti.Models;
 
 namespace Yemeksepeti.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class AdminController : Controller
     {
 
         Model_YS m = new Model_YS();
         
-        // ANA SAYFA
-        public ActionResult Index()
-        {
-            return View();
-        }
+
+     
         
-        // FİRMALAR
-        public ActionResult Firmalar()
-        {
-            return View(Context.Baglanti.Users.ToList());
-        }
-
-
-
-
-
-
-
-
-        // FIRMA EKLE EKLE
-
-        // UNDER CONSTRUCTION
-        public ActionResult FirmaEkle()
-        {
-            ViewBag.Sehirler = Context.Baglanti.Sehirler.ToList();
-
-            return View();
-        }
-        [HttpPost]
-        public ActionResult FirmaEkle(Users firma)
-        {
-            m.Users.Add(firma);
-            m.SaveChanges();
-
-            return RedirectToAction("Firmalar");
-        }
-
-
-
-
-        
-
-
-
-        // FIRMA DUZENLE SAYFASI EKLE
-
-        // FIRMA SIL SAYFASI EKLE
-
 
         //ÜRÜNLER
         public ActionResult Urunler()
@@ -97,11 +52,6 @@ namespace Yemeksepeti.Controllers
         {
             return View(Context.Baglanti.MenuTablosu.ToList());
         }
-        // MENU EKLE EKLE AMA MENU HAS TO HAVE A MENUCONTENT SO IM NOT SURE ABOUT HOW TO DO THAT
-
-        // MENU DUZENLE SAYFASI EKLE
-
-        // MENU SIL SAYFASI EKLE
 
         
         // SİPARİŞLER
@@ -109,7 +59,6 @@ namespace Yemeksepeti.Controllers
         {
             return View(Context.Baglanti.SiparisTablosu.ToList());
         }
-        // SIPARIS DUZENLE SAYFASI EKLE
 
         
         // ÜYELER
@@ -117,11 +66,6 @@ namespace Yemeksepeti.Controllers
         {
             return View(Context.Baglanti.Users.ToList());
         }
-        // UYE EKLE SAYFASI EKLE
-
-        // UYE DUZENLE SAYFASI EKLE
-
-        // UYE SIL SAYFASI EKLE
 
         
         // YORUMLAR
@@ -129,9 +73,6 @@ namespace Yemeksepeti.Controllers
         {
             return View(Context.Baglanti.YorumTablosu.ToList());
         }
-        // yorum DUZENLE SAYFASI EKLE
-
-        // yorum SIL SAYFASI EKLE
 
 
         // KONUMLAR
@@ -152,19 +93,9 @@ namespace Yemeksepeti.Controllers
 
             return RedirectToAction("Konumlar");
         }
-
         
 
-
-        // KONUM DUZENLE SAYFASI EKLE
-
-        // KONUM SIL SAYFASI EKLE
-
-
-        public ActionResult CikisYap()
-        {
-            return View();
-        }
+            
 
     }
 }

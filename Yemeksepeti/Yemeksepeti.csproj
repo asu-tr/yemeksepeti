@@ -1007,20 +1007,26 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Classes\Context.cs" />
-    <Compile Include="App_Classes\Kullanici.cs" />
     <Compile Include="App_Classes\Sepet.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ArrivalTime.cs" />
     <Compile Include="Models\ArrivalTimes.cs" />
+    <Compile Include="Models\aspnet_Applications.cs" />
+    <Compile Include="Models\aspnet_Membership.cs" />
+    <Compile Include="Models\aspnet_Paths.cs" />
+    <Compile Include="Models\aspnet_PersonalizationAllUsers.cs" />
+    <Compile Include="Models\aspnet_PersonalizationPerUser.cs" />
+    <Compile Include="Models\aspnet_Profile.cs" />
+    <Compile Include="Models\aspnet_Roles.cs" />
+    <Compile Include="Models\aspnet_SchemaVersions.cs" />
+    <Compile Include="Models\aspnet_Users.cs" />
+    <Compile Include="Models\aspnet_WebEvent_Events.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Comments.cs" />
     <Compile Include="Models\Locations.cs" />
@@ -1042,6 +1048,15 @@
     <Compile Include="Models\UrunTablosu.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\UserTypes.cs" />
+    <Compile Include="Models\vw_aspnet_Applications.cs" />
+    <Compile Include="Models\vw_aspnet_MembershipUsers.cs" />
+    <Compile Include="Models\vw_aspnet_Profiles.cs" />
+    <Compile Include="Models\vw_aspnet_Roles.cs" />
+    <Compile Include="Models\vw_aspnet_Users.cs" />
+    <Compile Include="Models\vw_aspnet_UsersInRoles.cs" />
+    <Compile Include="Models\vw_aspnet_WebPartState_Paths.cs" />
+    <Compile Include="Models\vw_aspnet_WebPartState_Shared.cs" />
+    <Compile Include="Models\vw_aspnet_WebPartState_User.cs" />
     <Compile Include="Models\WorkingHours.cs" />
     <Compile Include="Models\YorumTablosu.cs" />
     <Compile Include="Models\YorumTablosu_Orderer.cs" />
@@ -1097,9 +1112,6 @@
     <Content Include="Content\test-data\pages-task-list\json\users.json" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\Home\CreateAccount.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Firmalar.cshtml" />
@@ -1107,22 +1119,15 @@
     <Content Include="Views\Admin\Uyeler.cshtml" />
     <Content Include="Views\Admin\Konumlar.cshtml" />
     <Content Include="Views\Admin\Yorumlar.cshtml" />
-    <Content Include="Views\Admin\CikisYap.cshtml" />
     <Content Include="Views\Admin\Urunler.cshtml" />
     <Content Include="Views\Admin\Menuler.cshtml" />
     <Content Include="Views\Admin\UrunEkle.cshtml" />
     <Content Include="Views\Admin\KonumEkle.cshtml" />
     <Content Include="Views\Admin\FirmaEkle.cshtml" />
-    <Content Include="Views\Shared\SiteLayout.cshtml" />
     <Content Include="Views\Home\Sepet.cshtml" />
     <Content Include="Views\Site\Restoranlar.cshtml" />
     <Content Include="Views\Site\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\User\Ekle.cshtml" />
-    <Content Include="Views\Role\Index.cshtml" />
-    <Content Include="Views\Role\Ekle.cshtml" />
-    <Content Include="Views\User\RolAta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
