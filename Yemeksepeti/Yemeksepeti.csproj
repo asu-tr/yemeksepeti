@@ -1121,13 +1121,11 @@
     <Content Include="Views\Admin\Yorumlar.cshtml" />
     <Content Include="Views\Admin\Urunler.cshtml" />
     <Content Include="Views\Admin\Menuler.cshtml" />
-    <Content Include="Views\Admin\UrunEkle.cshtml" />
     <Content Include="Views\Admin\KonumEkle.cshtml" />
     <Content Include="Views\Admin\FirmaEkle.cshtml" />
     <Content Include="Views\Home\Sepet.cshtml" />
     <Content Include="Views\Site\Restoranlar.cshtml" />
     <Content Include="Views\Site\Index.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

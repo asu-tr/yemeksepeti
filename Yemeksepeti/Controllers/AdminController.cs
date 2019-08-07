@@ -26,25 +26,9 @@ namespace Yemeksepeti.Controllers
             return View(Context.Baglanti.UrunTablosu.ToList());
         }
         
-        // ÜRÜN EKLE
-        public ActionResult UrunEkle()
-        {
-            ViewBag.Kategoriler = Context.Baglanti.Categories.ToList();
+        
 
-            return View();
-        }
-        [HttpPost]
-        public ActionResult UrunEkle(Products urun)
-        {
-            m.Products.Add(urun);
-            m.SaveChanges();
-
-            return RedirectToAction("Urunler");
-        }
-
-        // URUN DUZENLE SAYFASI EKLE
-
-        // URUN SIL SAYFASI EKLE
+       
 
         
         // MENÜLER
